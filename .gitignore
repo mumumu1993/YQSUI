@@ -1,0 +1,53 @@
+# 由 https://www.toptal.com/developers/gitignore 生成
+# Xcode、iOS、macOS 通用忽略规则
+
+### Xcode ###
+# 工作区数据
+xcuserdata/
+*.xcworkspace
+!default.xcworkspace
+
+# 编译产物
+DerivedData/
+build/
+*.build
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# 模拟器/设备缓存
+*.simulator
+*.perspectivev3
+*.perspective
+
+# 调试文件
+*.debug
+*.profile
+
+# 日志
+*.log
+
+### CocoaPods ###
+Pods/
+!Podfile
+!Podfile.lock
+
+### Swift Package Manager ###
+Packages/
+Package.pins
+Package.resolved
+
+### fastlane ###
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+### 系统文件 ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
