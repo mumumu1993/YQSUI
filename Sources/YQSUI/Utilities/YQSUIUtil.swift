@@ -31,7 +31,7 @@ public struct YQSUIMainWindow {
 
 public extension String {
     //String获取多语言
-    func yqs_localized(comment:String = "") -> String {
+    func yqs_localized(comment: String = "") -> String {
         NSLocalizedString(self, comment: "")
     }
 }
@@ -148,8 +148,13 @@ public struct YQSUISafeArea {
 /// 例如：.modifier(YQSUIPressEffect(normalColor: .white, pressedColor: .gray))
 public struct YQSUIPressEffect: ViewModifier {
     @State private var isPressed = false
-    var normalColor: Color
-    var pressedColor: Color
+    private let normalColor: Color
+    private let pressedColor: Color
+    
+    public init(normalColor: Color = .clear, pressedColor: Color = .black.opacity(0.3)) {
+        self.normalColor = normalColor
+        self.pressedColor = pressedColor
+    }
     
     public func body(content: Content) -> some View {
         content
@@ -191,7 +196,11 @@ public extension View {
 
 //给视图添加无视安全区 + 隐藏导航栏效果
 public struct YQSUIFullScreenModifier: ViewModifier {
-    var alignment: Alignment = .top
+    private let alignment: Alignment
+    
+    public init(alignment: Alignment = .top) {
+        self.alignment = alignment
+    }
     
     public func body(content: Content) -> some View {
         if #available(iOS 16.0, *) {
@@ -211,7 +220,7 @@ public struct YQSUIFullScreenModifier: ViewModifier {
 
 //添加全屏效果的便捷方法
 public extension View {
-    func yqsUIFullScreen(alignment:Alignment = .top) -> some View {
+    func yqsUIFullScreen(alignment: Alignment = .top) -> some View {
         self.modifier(YQSUIFullScreenModifier(alignment: alignment))
     }
 }

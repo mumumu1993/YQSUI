@@ -45,7 +45,11 @@ public final class YQSUIKeyboardUtil: ObservableObject {
 
 // MARK: - Keyboard Adaptive Modifier
 public struct YQSUIKeyboardAdaptiveModifier: ViewModifier {
-    @ObservedObject private var keyboard = YQSUIKeyboardUtil.shared
+    @ObservedObject private var keyboard: YQSUIKeyboardUtil
+    
+    public init(keyboard: YQSUIKeyboardUtil = .shared) {
+        self.keyboard = keyboard
+    }
     
     public func body(content: Content) -> some View {
         content

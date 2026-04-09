@@ -77,7 +77,11 @@ private struct YQSUILoadingView: View {
 
 // MARK: - View Modifier
 public struct YQSUILoadingModifier: ViewModifier {
-    @ObservedObject var manager: YQSUILoadingManager = .shared
+    @ObservedObject private var manager: YQSUILoadingManager
+    
+    public init(manager: YQSUILoadingManager = .shared) {
+        self.manager = manager
+    }
     
     public func body(content: Content) -> some View {
         ZStack {

@@ -443,7 +443,7 @@ public struct YQSUIDialogDismissButton: View {
 public struct YQSUIDialogCard<Content: View>: View {
     let content: Content
 
-    init(@ViewBuilder content: () -> Content) {
+    public init(@ViewBuilder content: () -> Content) {
         self.content = content()
     }
 

@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-extension Color {
+public extension Color {
     /// 通过十六进制数值初始化颜色
     ///  - Parameters:
     ///   - hex: 0xRRGGBB 格式的十六进制颜色值
